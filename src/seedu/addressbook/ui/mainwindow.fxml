@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.AmbientLight?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@/seedu/addressbook/ui/DarkTheme.css" alignment="center" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="seedu.addressbook.ui.MainWindow">
+<VBox alignment="center" stylesheets="@/seedu/addressbook/ui/DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seedu.addressbook.ui.MainWindow">
 
     <children>
 
-        <TextField fx:id="commandInput" onAction="#onCommand" VBox.vgrow="NEVER">
-        </TextField>
+        <TextField fx:id="commandInput" onAction="#onCommand" promptText="Type your command here" style="-fx-background-color: pink;" styleClass="text-area" stylesheets="@DarkTheme.css" VBox.vgrow="NEVER">
+         <font>
+            <Font name="Kristen ITC" size="11.0" />
+         </font>
+         <effect>
+            <Blend mode="BLUE">
+               <topInput>
+                  <InnerShadow />
+               </topInput>
+            </Blend>
+         </effect>
+         <opaqueInsets>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </opaqueInsets></TextField>
 
-        <TextArea fx:id="outputConsole" editable="false" wrapText="true" VBox.vgrow="ALWAYS">
+        <TextArea fx:id="outputConsole" editable="false" promptText="Welcome" stylesheets="@DarkTheme.css" wrapText="true" VBox.vgrow="ALWAYS">
         </TextArea>
+      <AmbientLight color="CHARTREUSE" lightOn="true" />
 
     </children>
 
